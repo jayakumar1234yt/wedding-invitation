@@ -1,308 +1,504 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kishore ❤️ Suruthy Wedding</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>Kishore & Suruthy — Wedding Invitation</title>
+  <meta name="description" content="You are warmly invited to the wedding of Kishore Uthamaraj & Suruthy Dinakaran — 21 May 2026, Y.R Mahal, Nagercoil." />
 
-<script src="https://cdn.tailwindcss.com"></script>
+  <!-- Preconnect for fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" />
 
-<style>
+  <!-- TailwindCSS CDN (for utility helpers) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      corePlugins: { preflight: false },
+      theme: {
+        extend: {
+          colors: {
+            gold: '#B8963E',
+            cream: '#FAF5EC'
+          }
+        }
+      }
+    }
+  </script>
 
-body{
-margin:0;
-font-family: "Georgia", serif;
-background:#faf5f0;
-overflow-x:hidden;
-}
-
-.hero{
-height:100vh;
-background:url("https://images.unsplash.com/photo-1583394838336-acd977736f90?q=80&w=1920") center/cover no-repeat;
-display:flex;
-align-items:center;
-justify-content:center;
-position:relative;
-}
-
-.overlay{
-background:rgba(0,0,0,0.5);
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-}
-
-.hero-content{
-position:relative;
-color:white;
-text-align:center;
-}
-
-.door-container{
-position:relative;
-width:300px;
-height:400px;
-margin:auto;
-perspective:1000px;
-cursor:pointer;
-}
-
-.door{
-position:absolute;
-width:50%;
-height:100%;
-background:linear-gradient(#d4af37,#b8962e);
-border:2px solid #a8841f;
-transform-origin:left;
-transition:transform 1.5s;
-}
-
-.door.right{
-right:0;
-transform-origin:right;
-}
-
-.open .left{
-transform:rotateY(-110deg);
-}
-
-.open .right{
-transform:rotateY(110deg);
-}
-
-.section{
-padding:80px 20px;
-text-align:center;
-}
-
-.card{
-background:white;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,0.15);
-padding:40px;
-max-width:500px;
-margin:auto;
-margin-bottom:40px;
-}
-
-.petals{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-pointer-events:none;
-overflow:hidden;
-}
-
-.petal{
-position:absolute;
-color:#ff6b81;
-animation:fall linear infinite;
-}
-
-@keyframes fall{
-0%{transform:translateY(-10vh) rotate(0deg);}
-100%{transform:translateY(110vh) rotate(360deg);}
-}
-
-</style>
-
+  <!-- Main Styles -->
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
-
 <body>
 
-<div class="petals" id="petals"></div>
-
-<!-- TEMPLE ENTRY -->
-
-<section class="hero">
-
-<div class="overlay"></div>
-
-<div class="hero-content">
-
-<h1 class="text-4xl mb-8 tracking-widest">
-You Are Invited
-</h1>
-
-<div class="door-container" onclick="openTemple()" id="templeDoors">
-
-<div class="door left"></div>
-<div class="door right"></div>
-
-</div>
-
-<p class="mt-6 text-lg">
-Tap the temple doors to enter
-</p>
-
-</div>
-
-</section>
-
-<!-- MAIN INVITE -->
-
-<section id="invite" class="hidden">
-
-<div class="section">
-
-<h1 class="text-4xl mb-6">
-With happiness in their hearts
-</h1>
-
-<p class="text-xl mb-8">
-Mrs. A.G. Azhagi Lakshmi <br>
-& <br>
-(Late) Mr. G. Uthamaraj
-</p>
-
-<p class="mb-12 text-lg">
-request the pleasure of your presence
-at the wedding of their son
-</p>
-
-<h2 class="text-5xl text-rose-600 mb-4">
-Kishore Uthamaraj
-</h2>
-
-<p class="text-xl mb-6">with</p>
-
-<h2 class="text-5xl text-rose-600 mb-10">
-Suruthy Dinakaran
-</h2>
-
-<p class="mb-16">
-D/O (Late) Mr. M. Dinakaran <br>
-& Dr. S. Selva Sujatha
-</p>
-
-</div>
-
-<!-- WEDDING -->
-
-<div class="card">
-
-<h2 class="text-3xl mb-4">Wedding</h2>
-
-<p class="text-xl">Thursday</p>
-
-<p class="text-5xl text-rose-600 my-4">
-21 May 2026
-</p>
-
-<p class="text-xl mb-4">
-10:30 AM – 12:00 Noon
-</p>
-
-<p>
-Y.R Mahal <br>
-Water Tank Road <br>
-Nagercoil
-</p>
-
-</div>
-
-<!-- ENGAGEMENT -->
-
-<div class="card">
-
-<h2 class="text-3xl mb-4">Engagement</h2>
-
-<p class="text-xl">Wednesday</p>
-
-<p class="text-5xl text-rose-600 my-4">
-20 May 2026
-</p>
-
-<p class="text-xl mb-4">
-6:00 PM – 7:30 PM
-</p>
-
-<p>
-Y.R Mahal <br>
-Nagercoil
-</p>
-
-</div>
-
-<!-- RSVP -->
-
-<div class="section">
-
-<h2 class="text-3xl mb-6">
-Kindly Confirm Your Presence
-</h2>
-
-<a href="https://wa.me/?text=I%20will%20attend%20the%20wedding"
-class="bg-green-500 text-white px-8 py-4 rounded-full text-xl">
-RSVP via WhatsApp </a>
-
-</div>
-
-<!-- COMPLIMENTS -->
-
-<div class="section">
-
-<h3 class="text-2xl mb-6">
-With Best Compliments From
-</h3>
-
-<p>
-Mr. Kishanth & Mrs. Keerthanaa Kishanth
-</p>
-
-<p>
-Mr. M. Mohan & Mrs. Pushpalatha Mohan
-</p>
-
-</div>
-
-</section>
-
-<script>
-
-function openTemple(){
-
-const doors=document.getElementById("templeDoors");
-
-doors.classList.add("open");
-
-setTimeout(()=>{
-document.querySelector(".hero").style.display="none";
-document.getElementById("invite").classList.remove("hidden");
-
-gsap.from("#invite",{opacity:0,y:50,duration:1.5});
-
-},1500);
-
-}
-
-function createPetal(){
-
-const petal=document.createElement("div");
-petal.classList.add("petal");
-petal.innerHTML="🌸";
-
-petal.style.left=Math.random()*100+"vw";
-petal.style.animationDuration=3+Math.random()*5+"s";
-petal.style.fontSize=10+Math.random()*20+"px";
-
-document.getElementById("petals").appendChild(petal);
-
-setTimeout(()=>petal.remove(),8000);
-
-}
-
-setInterval(createPetal,300);
-
-</script>
+  <!-- ============================================================
+       OPENING OVERLAY
+       ============================================================ -->
+  <div id="opening-overlay" role="button" aria-label="Open wedding invitation" tabindex="0">
+    <div class="opening-border"></div>
+    <div class="opening-inner">
+      <img class="opening-ganesha" src="images/ganesha.png" alt="Ganesha" />
+
+      <div class="opening-title">
+        <span>Kishore</span>
+        <span style="font-size:0.55em; letter-spacing: 0.25em; color: rgba(212,175,106,0.6); font-style:italic; margin: 4px 0;">&amp;</span>
+        <span>Suruthy</span>
+      </div>
+
+      <div class="opening-divider"></div>
+
+      <div class="opening-subtitle">Wedding Invitation · 21 May 2026</div>
+
+      <div class="opening-cta">Tap to open &nbsp;✦</div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       MAIN CONTENT (hidden until overlay is dismissed)
+       ============================================================ -->
+  <div id="main-content">
+
+    <!-- ============================================================
+         SECTION 1: HERO
+         ============================================================ -->
+    <section id="hero">
+      <div class="hero-bg">
+        <img
+          class="hero-bg-temple"
+          src="images/temple-tall.png"
+          alt="Temple"
+          loading="eager"
+        />
+        <div class="hero-bg-overlay"></div>
+      </div>
+
+      <div class="hero-content">
+        <p class="hero-tag">✦ &nbsp; A Sacred Union &nbsp; ✦</p>
+
+        <h1 class="hero-names">
+          Kishore
+          <span class="ampersand">&amp;</span>
+          Suruthy
+        </h1>
+
+        <p class="hero-date-line">Thursday, 21 May 2026 &nbsp;·&nbsp; Nagercoil</p>
+
+        <div class="hero-scroll-hint">
+          <div class="hero-scroll-line"></div>
+          <span class="hero-scroll-text">Scroll</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 2: INVITATION CARD
+         ============================================================ -->
+    <section id="invite">
+      <div class="invite-bg"></div>
+
+      <div class="invite-wrapper">
+        <!-- Ganesha -->
+        <div class="reveal">
+          <img class="invite-ganesha" src="images/ganesha.png" alt="Ganesha" />
+        </div>
+
+        <p class="section-label reveal reveal-delay-1">With the blessings of God</p>
+
+        <div class="gold-ornament reveal reveal-delay-2">
+          <span class="line"></span>
+          <span class="symbol">✦</span>
+          <span class="line right"></span>
+        </div>
+
+        <!-- Parents -->
+        <div class="invite-parents reveal reveal-delay-2">
+          <p>Son of</p>
+          <p><strong>Mrs. A.G. Azhagi Lakshmi</strong><br/>
+          <strong>&amp; (Late) Mr. G. Uthamaraj</strong></p>
+        </div>
+
+        <div class="section-divider reveal reveal-delay-3">
+          <span class="diamond"></span>
+        </div>
+
+        <!-- Couple Names -->
+        <h2 class="invite-couple-names reveal reveal-delay-3">
+          Kishore
+          <span class="name-connector">Uthamaraj weds</span>
+          Suruthy
+          <span class="name-connector" style="font-size:0.4em; letter-spacing:0.15em; color: var(--color-text-light);">Dinakaran</span>
+        </h2>
+
+        <div class="section-divider reveal reveal-delay-4">
+          <span class="diamond"></span>
+        </div>
+
+        <p class="invite-blessing reveal reveal-delay-4">
+          Together with their families, they joyfully invite<br/>
+          you to celebrate this sacred occasion
+        </p>
+
+        <!-- Framed Photo -->
+        <div class="invite-frame reveal reveal-delay-5">
+          <img class="frame-img" src="images/frame-ornate.png" alt="" aria-hidden="true" />
+          <img class="invite-photo" src="images/couple-full.png" alt="Kishore and Suruthy" />
+        </div>
+
+        <div class="gold-ornament reveal">
+          <span class="line"></span>
+          <span class="symbol">✦</span>
+          <span class="line right"></span>
+        </div>
+
+        <p class="invite-heading reveal reveal-delay-1">
+          Compliments from
+        </p>
+        <div class="invite-parents reveal reveal-delay-2">
+          <p>
+            <strong>Mr. Kishanth &amp; Mrs. Keerthanaa Kishanth</strong><br/>
+            <strong>Mr. M. Mohan &amp; Mrs. Pushpalatha Mohan</strong>
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 3: COUPLE INTRO
+         ============================================================ -->
+    <section id="couple">
+      <div class="couple-bg"></div>
+
+      <div class="couple-container">
+        <div class="couple-heading">
+          <p class="section-label reveal" style="color: var(--color-gold-light);">Meet the Couple</p>
+          <h2 class="reveal reveal-delay-1">
+            Two souls, <em>one destiny</em>
+          </h2>
+          <div class="section-divider reveal reveal-delay-2" style="margin: 16px auto;">
+            <span class="diamond" style="background: var(--color-gold-light);"></span>
+          </div>
+        </div>
+
+        <div class="couple-grid" data-stagger>
+          <!-- Groom -->
+          <div class="couple-card reveal-left" data-stagger-child>
+            <div class="couple-card-inner">
+              <img src="images/couple-mirror.png" alt="Kishore Uthamaraj" loading="lazy" />
+              <div class="couple-card-overlay"></div>
+            </div>
+            <div class="couple-card-text">
+              <p class="couple-card-name">Kishore<br/>Uthamaraj</p>
+              <p class="couple-card-role">The Groom</p>
+            </div>
+          </div>
+
+          <!-- Bride -->
+          <div class="couple-card reveal-right" data-stagger-child>
+            <div class="couple-card-inner">
+              <img src="images/bride-closeup.png" alt="Suruthy Dinakaran" loading="lazy" />
+              <div class="couple-card-overlay"></div>
+            </div>
+            <div class="couple-card-text">
+              <p class="couple-card-name">Suruthy<br/>Dinakaran</p>
+              <p class="couple-card-role">The Bride</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="couple-quote">
+          <blockquote class="reveal">
+            "Where there is love, there is life — and in this love, a lifetime begins."
+          </blockquote>
+          <cite class="reveal reveal-delay-1">✦ &nbsp; Kishore &amp; Suruthy &nbsp; ✦</cite>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 4: EVENTS
+         ============================================================ -->
+    <section id="events">
+      <div class="events-bg"></div>
+      <img class="events-flowers-left" src="images/flowers-left.png" alt="" aria-hidden="true" />
+      <img class="events-flowers-right" src="images/flowers-right.png" alt="" aria-hidden="true" />
+
+      <div class="events-container">
+        <div class="events-title">
+          <p class="section-label reveal">Save the Date</p>
+          <h2 class="reveal reveal-delay-1">The <em>Celebrations</em></h2>
+          <div class="section-divider reveal reveal-delay-2" style="margin: 16px auto;">
+            <span class="diamond"></span>
+          </div>
+        </div>
+
+        <div class="events-grid">
+
+          <!-- Wedding -->
+          <div class="event-card reveal-left">
+            <span class="event-card-corner tl"></span>
+            <span class="event-card-corner tr"></span>
+            <span class="event-card-corner bl"></span>
+            <span class="event-card-corner br"></span>
+
+            <img class="event-icon" src="images/icon-ring.png" alt="" />
+            <p class="event-type">Sacred Ceremony</p>
+            <h3 class="event-name">Wedding</h3>
+
+            <div class="event-detail-row">
+              <img class="event-detail-icon" src="images/icon-person.png" alt="" />
+              <div class="event-detail-text">
+                <strong>Thursday, 21 May 2026</strong>
+                10:30 AM – 12:00 Noon
+              </div>
+            </div>
+
+            <div class="event-detail-row">
+              <img class="event-detail-icon" src="images/icon-car.png" alt="" />
+              <div class="event-detail-text">
+                <strong>Y.R Mahal</strong>
+                Water Tank Road, Nagercoil
+              </div>
+            </div>
+          </div>
+
+          <!-- Engagement -->
+          <div class="event-card reveal-right">
+            <span class="event-card-corner tl"></span>
+            <span class="event-card-corner tr"></span>
+            <span class="event-card-corner bl"></span>
+            <span class="event-card-corner br"></span>
+
+            <img class="event-icon" src="images/icon-ring.png" alt="" />
+            <p class="event-type">Joyful Celebration</p>
+            <h3 class="event-name">Engagement</h3>
+
+            <div class="event-detail-row">
+              <img class="event-detail-icon" src="images/icon-person.png" alt="" />
+              <div class="event-detail-text">
+                <strong>Wednesday, 20 May 2026</strong>
+                6:00 PM – 7:30 PM
+              </div>
+            </div>
+
+            <div class="event-detail-row">
+              <img class="event-detail-icon" src="images/icon-car.png" alt="" />
+              <div class="event-detail-text">
+                <strong>Y.R Mahal</strong>
+                Nagercoil
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 5: PHOTO GALLERY (auto-scrolling strip)
+         ============================================================ -->
+    <section id="gallery">
+      <div class="gallery-track-wrapper">
+        <div class="gallery-track">
+          <div class="gallery-item">
+            <img src="images/couple-full.png" alt="Couple" loading="lazy" />
+          </div>
+          <div class="gallery-item">
+            <img src="images/couple-petals.png" alt="Couple with petals" loading="lazy" />
+          </div>
+          <div class="gallery-item">
+            <img src="images/bride-closeup.png" alt="Bride" loading="lazy" />
+          </div>
+          <div class="gallery-item">
+            <img src="images/couple-mirror.png" alt="Couple in mirror" loading="lazy" />
+          </div>
+          <div class="gallery-item">
+            <img src="images/couple-full.png" alt="Couple" loading="lazy" style="object-position: center;" />
+          </div>
+          <div class="gallery-item">
+            <img src="images/couple-petals.png" alt="Couple petals" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 6: VENUE
+         ============================================================ -->
+    <section id="venue">
+      <div class="venue-bg"></div>
+
+      <div class="venue-container">
+        <div class="venue-title">
+          <p class="section-label reveal">Find Us Here</p>
+          <h2 class="reveal reveal-delay-1">The <em>Venue</em></h2>
+          <div class="section-divider reveal reveal-delay-2" style="margin: 16px auto;">
+            <span class="diamond"></span>
+          </div>
+        </div>
+
+        <div class="venue-card reveal">
+          <span class="event-card-corner tl"></span>
+          <span class="event-card-corner tr"></span>
+          <span class="event-card-corner bl"></span>
+          <span class="event-card-corner br"></span>
+
+          <p class="section-label" style="margin-bottom: 10px;">Wedding &amp; Engagement</p>
+          <h3 class="venue-name">Y.R Mahal</h3>
+          <p class="venue-address">
+            Water Tank Road<br/>
+            Nagercoil, Tamil Nadu
+          </p>
+
+          <a
+            class="venue-map-btn"
+            href="https://maps.google.com/?q=Y.R+Mahal+Nagercoil"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+              <circle cx="12" cy="9" r="2.5"/>
+            </svg>
+            Open in Maps
+          </a>
+        </div>
+
+        <!-- Decorative vintage cars -->
+        <div class="venue-cars">
+          <div class="venue-car reveal-left" style="transition-delay:0.1s">
+            <img src="images/car-black.png" alt="" aria-hidden="true" />
+          </div>
+          <div class="venue-car reveal" style="transition-delay:0.25s">
+            <img src="images/car-teal.png" alt="" aria-hidden="true" />
+          </div>
+          <div class="venue-car reveal-right" style="transition-delay:0.1s">
+            <img src="images/car-blue.png" alt="" aria-hidden="true" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 7: COMPLIMENTS
+         ============================================================ -->
+    <section id="compliments">
+      <div class="compliments-bg"></div>
+
+      <div class="compliments-container">
+        <div class="compliments-title">
+          <p class="section-label reveal" style="color: var(--color-gold-light);">With Love &amp; Blessings</p>
+          <h2 class="reveal reveal-delay-1">
+            <em>Compliments</em> from
+          </h2>
+          <div class="section-divider reveal reveal-delay-2" style="margin: 16px auto; max-width: 200px;">
+            <span class="diamond" style="background: var(--color-gold-light);"></span>
+          </div>
+        </div>
+
+        <div class="compliments-list" data-stagger>
+          <div class="compliment-item reveal" data-stagger-child>
+            <p class="compliment-name">
+              <span>Mr. Kishanth</span>
+              &nbsp;&amp;&nbsp;
+              <span>Mrs. Keerthanaa Kishanth</span>
+            </p>
+          </div>
+
+          <div class="compliment-item reveal reveal-delay-2" data-stagger-child>
+            <p class="compliment-name">
+              <span>Mr. M. Mohan</span>
+              &nbsp;&amp;&nbsp;
+              <span>Mrs. Pushpalatha Mohan</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Candles -->
+        <div class="candle-row">
+          <img class="candle-item reveal" src="images/candle.png" alt="" aria-hidden="true" />
+          <img class="candle-item reveal reveal-delay-2" src="images/candle.png" alt="" aria-hidden="true" style="width:36px; margin-top:10px;" />
+          <img class="candle-item reveal reveal-delay-3" src="images/candle.png" alt="" aria-hidden="true" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 8: RSVP / WHATSAPP
+         ============================================================ -->
+    <section id="rsvp">
+      <div class="rsvp-bg"></div>
+
+      <div class="rsvp-container">
+        <p class="section-label reveal">Join the Celebration</p>
+        <div class="rsvp-title">
+          <h2 class="reveal reveal-delay-1">
+            RSVP <em>Today</em>
+          </h2>
+        </div>
+
+        <div class="section-divider reveal reveal-delay-2" style="margin: 16px auto;">
+          <span class="diamond"></span>
+        </div>
+
+        <p class="rsvp-text reveal reveal-delay-2">
+          We'd be honoured by your presence. Kindly let us know<br class="hidden sm:block"/>
+          if you will be joining us on this joyful occasion.
+        </p>
+
+        <div class="reveal reveal-delay-3">
+          <a
+            class="whatsapp-btn"
+            href="https://wa.me/?text=I%20will%20be%20attending%20the%20wedding%20of%20Kishore%20%26%20Suruthy%20on%2021%20May%202026%20at%20Y.R%20Mahal%2C%20Nagercoil%21%20%F0%9F%8C%B8"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            RSVP via WhatsApp
+          </a>
+        </div>
+
+        <p class="rsvp-note reveal" style="transition-delay:0.5s;">
+          21 May 2026 &nbsp;·&nbsp; Y.R Mahal, Nagercoil
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FOOTER
+         ============================================================ -->
+    <footer id="footer">
+      <img
+        style="width:70px; margin: 0 auto 24px; opacity:0.3; filter: brightness(2);"
+        src="images/ganesha.png"
+        alt=""
+        aria-hidden="true"
+      />
+
+      <div class="footer-line"></div>
+
+      <h2 class="footer-names">
+        Kishore <em>&amp;</em> Suruthy
+      </h2>
+
+      <p class="footer-date">21 · 05 · 2026 &nbsp;✦&nbsp; Nagercoil</p>
+
+      <div class="footer-line"></div>
+
+      <p class="footer-copy">
+        With love &amp; blessings — Mrs. A.G. Azhagi Lakshmi &amp; (Late) Mr. G. Uthamaraj
+      </p>
+    </footer>
+
+  </div><!-- /#main-content -->
+
+  <!-- Main Script -->
+  <script src="js/script.js"></script>
 
 </body>
 </html>
