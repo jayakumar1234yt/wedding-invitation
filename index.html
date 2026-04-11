@@ -1,25 +1,172 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
+
 <head>
 <meta charset="UTF-8">
-<title>Wedding Invitation</title>
+<title>Kishore ❤️ Suruthy Wedding</title>
+
 <script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+
+body{
+background:linear-gradient(#fff,#fdf2f2);
+font-family:Georgia,serif;
+}
+
+.fade{
+animation:fade 2s ease;
+}
+
+@keyframes fade{
+from{opacity:0;transform:translateY(30px)}
+to{opacity:1}
+}
+
+</style>
+
 </head>
 
-<body class="bg-rose-50 flex items-center justify-center h-screen">
+<body class="text-center">
 
-<div class="text-center">
-<h1 class="text-5xl font-serif">Wedding Invitation</h1>
+<!-- Opening Screen -->
 
-<p class="mt-4 text-xl">
-Meena ❤️ Arun
+<section id="opening" class="h-screen flex flex-col justify-center items-center">
+
+<h1 class="text-5xl mb-6 fade">
+Wedding Invitation
+</h1>
+
+<p class="mb-10 text-lg fade">
+Tap below to open the invitation
 </p>
 
-<p class="mt-4">
-You are warmly invited to celebrate our wedding
+<button onclick="openInvite()"
+class="bg-rose-500 text-white px-8 py-4 rounded-full text-xl shadow-lg hover:bg-rose-600">
+Open Invitation </button>
+
+</section>
+
+<!-- Main Invite -->
+
+<section id="invite" class="hidden px-6 py-20">
+
+<h1 class="text-4xl mb-6">
+With happiness in their hearts
+</h1>
+
+<p class="text-xl mb-8">
+Mrs. A.G. Azhagi Lakshmi <br>
+& <br>
+(Late) Mr. G. Uthamaraj
+</p>
+
+<p class="mb-12 text-lg">
+solicit your gracious presence on the occasion
+of the marriage of their son
+</p>
+
+<h2 class="text-5xl text-rose-600 mb-4">
+Kishore Uthamaraj
+</h2>
+
+<p class="text-xl mb-6">with</p>
+
+<h2 class="text-5xl text-rose-600 mb-10">
+Suruthy Dinakaran
+</h2>
+
+<p class="mb-16">
+D/O (Late) Mr. M. Dinakaran <br>
+& Dr. S. Selva Sujatha
+</p>
+
+<!-- Wedding -->
+
+<div class="bg-white shadow-xl rounded-2xl p-10 mb-16 max-w-xl mx-auto">
+
+<h3 class="text-3xl mb-6">
+Wedding
+</h3>
+
+<p class="text-xl">
+Thursday
+</p>
+
+<p class="text-5xl my-4 text-rose-600">
+21 May 2026
+</p>
+
+<p class="text-xl mb-6">
+10:30 AM – 12:00 Noon
+</p>
+
+<p>
+Y.R Mahal <br>
+Water Tank Road <br>
+Nagercoil
 </p>
 
 </div>
+
+<!-- Engagement -->
+
+<div class="bg-white shadow-xl rounded-2xl p-10 mb-16 max-w-xl mx-auto">
+
+<h3 class="text-3xl mb-6">
+Engagement
+</h3>
+
+<p class="text-xl">
+Wednesday
+</p>
+
+<p class="text-5xl my-4 text-rose-600">
+20 May 2026
+</p>
+
+<p class="text-xl mb-6">
+6:00 PM – 7:30 PM
+</p>
+
+<p>
+Y.R Mahal <br>
+Nagercoil
+</p>
+
+</div>
+
+<!-- Compliments -->
+
+<section class="mt-20">
+
+<h3 class="text-2xl mb-6">
+With Best Compliments From
+</h3>
+
+<p>
+Mr. Kishanth & Mrs. Keerthanaa Kishanth
+</p>
+
+<p>
+Mr. M. Mohan & Mrs. Pushpalatha Mohan
+</p>
+
+</section>
+
+</section>
+
+<script>
+
+function openInvite(){
+
+document.getElementById("opening").style.display="none";
+document.getElementById("invite").style.display="block";
+
+}
+
+</script>
 
 </body>
 </html>
