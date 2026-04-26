@@ -1027,22 +1027,22 @@
     clip-path: unset;
 }
 </style>
-</style>
-
 <style>
-.framer-q8p0o4-container {
-  position: absolute !important;
-  z-index: 9999 !important;
-}
-
+/* Move lanterns behind */
 [id^="lantern"] {
-  z-index: 1 !important;
-  pointer-events: none;
+  position: absolute !important;
+  z-index: 0 !important;
 }
 
-.framer-q8p0o4-container * {
-  position: relative;
-  z-index: 9999;
+/* Bring text fully on top */
+.framer-q8p0o4-container {
+  position: relative !important;
+  z-index: 99999 !important;
+}
+
+/* Fix Framer transform stacking issue */
+[id^="lantern"] * {
+  transform: none !important;
 }
 </style>
 </head>
