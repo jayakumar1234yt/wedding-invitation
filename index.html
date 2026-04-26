@@ -998,7 +998,7 @@
 
 /* Keep lanterns slightly behind */
 [id^="lantern"] {
-  z-index: 1;
+  z-index: 1 !important;
   pointer-events: none;
 }
 
@@ -1015,22 +1015,6 @@
   text-shadow:
     0 0 10px rgba(0,0,0,0.8),
     0 2px 6px rgba(0,0,0,0.6);
-}
-
-
-/* 🔥 MOBILE FIX — push lanterns away from text */
-@media (max-width: 768px) {
-
-  /* Move all lantern groups away from center */
-  [id^="lantern"] {
-    transform: translateX(-150px) !important;
-  }
-
-  /* Kill the main center offender */
-  .framer-q69f1i {
-    display: none !important;
-  }
-
 }
 
 </style>
