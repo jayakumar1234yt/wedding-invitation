@@ -998,8 +998,8 @@
 
 /* Keep lanterns slightly behind */
 [id^="lantern"] {
-  z-index: 1 !important;
-  pointer-events: none;
+  -webkit-mask-image: radial-gradient(circle at center, transparent 180px, black 200px);
+  mask-image: radial-gradient(circle at center, transparent 180px, black 200px);
 }
 
 /* Put your text layer clearly above */
