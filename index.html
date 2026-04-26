@@ -993,87 +993,40 @@
         transform: rotate(360deg);
     }
 }
-</style>
-<style>
-
-/* Keep lanterns slightly behind */
-[id^="lantern"] {
-  z-index: 1 !important;
-  pointer-events: none;
+</style><style>
+#__framer-editorbar {
+    /* https://sergeyski.com/css-color-scheme-and-iframes-lessons-learned-from-disqus-background-bug */
+    color-scheme: light dark;
+    overflow: hidden;
+    position: fixed;
+    border: none;
+    z-index: calc(2147483647);
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    touch-action: manipulation;
 }
 
-/* Put your text layer clearly above */
-.framer-q8p0o4-container {
-  position: relative !important;
-  z-index: 10 !important;
-}
-
-/* Improve readability instead of fighting layers */
-.framer-q8p0o4-container h2,
-.framer-q8p0o4-container h3,
-.framer-q8p0o4-container p {
-  text-shadow:
-    0 0 10px rgba(0,0,0,0.8),
-    0 2px 6px rgba(0,0,0,0.6);
-}
-
-</style>
-<script>
-(function fixNameSpacing() {
-  function apply() {
-    // Force height:auto and remove margins on all three containers
-    var selectors = [
-      '.framer-aXrkt .framer-11ag0sw',
-      '.framer-aXrkt .framer-rtadh1', 
-      '.framer-aXrkt .framer-13k4cyv'
-    ];
-    
-    selectors.forEach(function(sel) {
-      var el = document.querySelector(sel);
-      if (el) {
-        el.style.setProperty('height', 'auto', 'important');
-        el.style.setProperty('min-height', '0', 'important');
-        el.style.setProperty('margin-top', '0', 'important');
-        el.style.setProperty('margin-bottom', '0', 'important');
-        el.style.setProperty('padding', '0', 'important');
-      }
-    });
-
-    // Add bottom margin ONLY to Suruthy (last name) for spacing below
-    var name2 = document.querySelector('.framer-aXrkt .framer-13k4cyv');
-    if (name2) name2.style.setProperty('margin-bottom', '60px', 'important');
-
-    // Shrink the & symbol container
-    var amp = document.querySelector('.framer-aXrkt .framer-rtadh1 .framer-text');
-    if (amp) {
-      amp.style.setProperty('font-size', '60px', 'important');
-      amp.style.setProperty('line-height', '1', 'important');
+@supports (height: 100dvh) {
+    #__framer-editorbar {
+        height: 100dvh;
     }
+}
 
-    // Tighten name line-heights
-    ['.framer-aXrkt .framer-11ag0sw .framer-text',
-     '.framer-aXrkt .framer-13k4cyv .framer-text'].forEach(function(sel) {
-      var el = document.querySelector(sel);
-      if (el) el.style.setProperty('line-height', '1', 'important');
-    });
+#__framer-editorbar.status_hidden {
+    display: none;
+}
 
-    // Zero gap on parent
-    var parent = document.querySelector('.framer-aXrkt.framer-1p3qhwc');
-    if (parent) parent.style.setProperty('gap', '0', 'important');
-  }
+#__framer-editorbar.status_visually_hidden {
+    clip-path: circle(1px at calc(100% - 1px) calc(100% - 1px));
+    z-index: calc(2147483647 - 1);
+}
 
-  // Run immediately, then again after Framer hydrates
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', apply);
-  } else {
-    apply();
-  }
-  setTimeout(apply, 500);
-  setTimeout(apply, 1500);
-  setTimeout(apply, 3000);
-})();
-</script>
-</head>
+#__framer-editorbar.status_measuring {
+    clip-path: unset;
+}
+</style></head>
 <body>
 	<script async="" src="./Assets/script" data-fid="b59e07eabc4895e072e22a0c6fed670cfb9b89108aaee0defa6398c5d1f028e0" data-no-nt=""></script>
 	<!-- Start of bodyStart -->
@@ -1314,7 +1267,7 @@
               </div>
               <div class="framer-11cf3vz" data-framer-name="Ganesha ji">
                 <div style="position:absolute;border-radius:inherit;corner-shape:inherit;top:0;right:0;bottom:0;left:0" data-framer-background-image-wrapper="true">
-                  <img decoding="auto" width="279" height="296" src="Assets/tjsmDC8g305SmMs98B3ABqR5QE.png" alt="" style="display:block;width:100%;height:100%;border-radius:inherit;corner-shape:inherit;object-position:center;object-fit:cover">
+                  <img decoding="auto" width="279" height="296" src="./Assets/tjsmDC8g305SmMs98B3ABqR5QE.png" alt="" style="display:block;width:100%;height:100%;border-radius:inherit;corner-shape:inherit;object-position:center;object-fit:cover">
                 </div>
               </div>
               <div class="framer-19f1j5h-container">
@@ -1706,7 +1659,7 @@
                       <div class="framer-inj5oz" data-framer-name="Date and day" data-framer-component-type="RichTextContainer" style="--extracted-r6o4lv: rgb(69, 160, 134); --framer-paragraph-spacing: 0px; transform: none; opacity: 1;">
                         <p class="framer-text" style="--font-selector:R0Y7Q29ybW9yYW50LXJlZ3VsYXI=;--framer-font-family:&quot;Cormorant&quot;, &quot;Cormorant Placeholder&quot;, serif;--framer-font-size:14px;--framer-line-height:100%;--framer-text-alignment:center;--framer-text-color:var(--extracted-r6o4lv, rgb(69, 160, 134))">Wednesday</p>
                       </div>
-                                            <div class="framer-inj5oz" data-framer-name="Date and day" data-framer-component-type="RichTextContainer" style="--extracted-r6o4lv: rgb(69, 160, 134); --framer-paragraph-spacing: 0px; transform: none; opacity: 1;">
+                      <div class="framer-inj5oz" data-framer-name="Date and day" data-framer-component-type="RichTextContainer" style="--extracted-r6o4lv: rgb(69, 160, 134); --framer-paragraph-spacing: 0px; transform: none; opacity: 1;">
                         <p class="framer-text" style="--font-selector:R0Y7Q29ybW9yYW50LXJlZ3VsYXI=;--framer-font-family:&quot;Cormorant&quot;, &quot;Cormorant Placeholder&quot;, serif;--framer-font-size:14px;--framer-line-height:100%;--framer-text-alignment:center;--framer-text-color:var(--extracted-r6o4lv, rgb(69, 160, 134))">20 May 2026</p>
                       </div>
                       <!-- <div class="framer-1lwecf7" data-framer-name="Venue" data-framer-component-type="RichTextContainer" style="--extracted-r6o4lv: rgb(69, 160, 134); --framer-paragraph-spacing: 0px; transform: none; opacity: 1;">
@@ -1766,6 +1719,8 @@
               </div>
               </div>
             </div>
+          </div>
+        </div>
           </div>
         </div>
       </div>
