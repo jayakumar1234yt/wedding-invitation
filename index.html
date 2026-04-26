@@ -998,8 +998,11 @@
 
 /* Keep lanterns slightly behind */
 [id^="lantern"] {
-  -webkit-mask-image: radial-gradient(circle at center, transparent 180px, black 200px);
-  mask-image: radial-gradient(circle at center, transparent 180px, black 200px);
+  z-index: 1;
+}
+
+.framer-q8p0o4-container {
+  z-index: 10;
 }
 
 /* Put your text layer clearly above */
@@ -1151,7 +1154,7 @@
                         </div>
                       </div>
                     </div>
-                <!-- <div class="framer-10tzl9r" data-framer-name="Lantern stack" id="lantern-3">
+                <div class="framer-10tzl9r" data-framer-name="Lantern stack" id="lantern-3">
                   <div class="ssr-variant">
                     <div class="framer-biwwie" data-framer-appear-id="biwwie" data-framer-name="Lantern" style="will-change: transform; opacity: 1; transform: rotate(-7deg);">
                       <div style="position:absolute;border-radius:inherit;corner-shape:inherit;top:0;right:0;bottom:0;left:0" data-framer-background-image-wrapper="true">
@@ -1180,7 +1183,7 @@
                       </div>
                     </div>
                   </div>
-                </div> -->
+                </div>
               </div>
               <div class="framer-p2tz9u hidden-rw19y8" data-framer-name="Lanterns 3">
                 <div class="framer-gtb9yh" data-framer-name="Lantern stack" id="lantern-4">
