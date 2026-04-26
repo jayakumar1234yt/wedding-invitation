@@ -993,82 +993,28 @@
         transform: rotate(360deg);
     }
 }
-</style><style>
-#__framer-editorbar {
-    /* https://sergeyski.com/css-color-scheme-and-iframes-lessons-learned-from-disqus-background-bug */
-    color-scheme: light dark;
-    overflow: hidden;
-    position: fixed;
-    border: none;
-    z-index: calc(2147483647);
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    touch-action: manipulation;
-}
-
-@supports (height: 100dvh) {
-    #__framer-editorbar {
-        height: 100dvh;
-    }
-}
-
-#__framer-editorbar.status_hidden {
-    display: none;
-}
-
-#__framer-editorbar.status_visually_hidden {
-    clip-path: circle(1px at calc(100% - 1px) calc(100% - 1px));
-    z-index: calc(2147483647 - 1);
-}
-
-#__framer-editorbar.status_measuring {
-    clip-path: unset;
-}
 </style>
 <style>
 
-/* --- Force lanterns behind EVERYTHING --- */
+/* Keep lanterns slightly behind */
 [id^="lantern"] {
-  position: absolute !important;
-  z-index: 0 !important;
+  z-index: 1 !important;
   pointer-events: none;
 }
 
-/* VERY IMPORTANT: kill their stacking priority */
-[id^="lantern"] > div {
-  z-index: 0 !important;
-}
-
-/* --- Bring text above --- */
+/* Put your text layer clearly above */
 .framer-q8p0o4-container {
   position: relative !important;
-  z-index: 999999 !important;
+  z-index: 10 !important;
 }
 
-/* Ensure all text layers stay above */
-.framer-q8p0o4-container * {
-  position: relative !important;
-  z-index: 999999 !important;
-}
-
-/* --- MOBILE HARD FIX --- */
-@media (max-width: 768px) {
-
-  [id^="lantern"] {
-    z-index: 0 !important;
-  }
-
-  [id^="lantern"] * {
-    z-index: 0 !important;
-  }
-
-  .framer-q8p0o4-container,
-  .framer-q8p0o4-container * {
-    z-index: 999999 !important;
-  }
-
+/* Improve readability instead of fighting layers */
+.framer-q8p0o4-container h2,
+.framer-q8p0o4-container h3,
+.framer-q8p0o4-container p {
+  text-shadow:
+    0 0 10px rgba(0,0,0,0.8),
+    0 2px 6px rgba(0,0,0,0.6);
 }
 
 </style>
@@ -1341,13 +1287,13 @@
                     <div class="ssr-variant hidden-1ix6lmh">
                       <div class="framer-aXrkt framer-1p3qhwc framer-v-1p3qhwc" data-framer-name="Desktop" style="width: 100%; opacity: 1;">
                       <div class="framer-11ag0sw" data-framer-name="Aaditya" data-framer-component-type="RichTextContainer" style="--extracted-r6o4lv: rgb(243, 236, 186); --framer-paragraph-spacing: 0px; transform: none; opacity: 1;">
-                      <p class="framer-text" style="margin: 0; --font-selector:R0Y7Q29ybW9yYW50IFVwcmlnaHQtcmVndWxhcg==;--framer-font-family:&quot;Cormorant Upright&quot;, &quot;Cormorant Upright Placeholder&quot;, serif;--framer-font-size:150px;--framer-line-height:120%;--framer-text-alignment:center;--framer-text-color:var(--extracted-r6o4lv, rgb(243, 236, 186))">Kishore Uthamaraj</p>
+                      <p class="framer-text" style="margin: 0; --font-selector:R0Y7Q29ybW9yYW50IFVwcmlnaHQtcmVndWxhcg==;--framer-font-family:&quot;Cormorant Upright&quot;, &quot;Cormorant Upright Placeholder&quot;, serif;--framer-font-size:150px;--framer-line-height:190%;--framer-text-alignment:center;--framer-text-color:var(--extracted-r6o4lv, rgb(243, 236, 186))">Kishore Uthamaraj</p>
                     </div>
                     <div class="framer-rtadh1" data-framer-name="&amp;" data-framer-component-type="RichTextContainer" style="--extracted-r6o4lv: rgb(243, 236, 186); --framer-paragraph-spacing: 0px; transform: none; opacity: 1; ">
                       <p class="framer-text" style="margin: 0; --font-selector:R0Y7Q29ybW9yYW50IFVwcmlnaHQtcmVndWxhcg==;--framer-font-family:&quot;Cormorant Upright&quot;, &quot;Cormorant Upright Placeholder&quot;, serif;--framer-font-size:156px;--framer-line-height:110%;--framer-text-color:var(--extracted-r6o4lv, rgb(243, 236, 186));">&amp;</p>
                     </div>
                     <div class="framer-13k4cyv" data-framer-name="Veera" data-framer-component-type="RichTextContainer" style="--extracted-r6o4lv: rgb(243, 236, 186); --framer-paragraph-spacing: 0px; transform: none; opacity: 1;">
-                      <p class="framer-text" style= "margin: 0; --font-selector:R0Y7Q29ybW9yYW50LXJlZ3VsYXI=;--framer-font-family:&quot;Cormorant&quot;, &quot;Cormorant Placeholder&quot;, serif;--framer-font-size:150px;--framer-line-height:90%;--framer-text-alignment:center;--framer-text-color:var(--extracted-r6o4lv, rgb(243, 236, 186))">Suruthy Dinakaran</p>
+                      <p class="framer-text" style= "margin: 0; --font-selector:R0Y7Q29ybW9yYW50LXJlZ3VsYXI=;--framer-font-family:&quot;Cormorant&quot;, &quot;Cormorant Placeholder&quot;, serif;--framer-font-size:150px;--framer-line-height:60%;--framer-text-alignment:center;--framer-text-color:var(--extracted-r6o4lv, rgb(243, 236, 186))">Suruthy Dinakaran</p>
                     </div>
                   </div>
                 </div>
