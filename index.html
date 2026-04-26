@@ -1028,6 +1028,8 @@
 }
 </style>
 <style>
+/* --- Desktop + general --- */
+
 /* Keep lanterns behind */
 [id^="lantern"] {
   z-index: 1 !important;
@@ -1038,6 +1040,29 @@
 .framer-q8p0o4-container {
   position: relative !important;
   z-index: 99999 !important;
+}
+
+.framer-q8p0o4-container * {
+  position: relative !important;
+  z-index: 99999 !important;
+}
+
+
+/* --- Mobile fix --- */
+@media (max-width: 768px) {
+
+  .framer-q8p0o4-container {
+    z-index: 999999 !important;
+  }
+
+  .framer-q8p0o4-container * {
+    z-index: 999999 !important;
+  }
+
+  [id^="lantern"] {
+    z-index: 0 !important;
+  }
+
 }
 </style>
 </head>
