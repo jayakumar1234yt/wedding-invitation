@@ -1545,22 +1545,29 @@
   }
 }
 
-@media (min-width: 600px) and (max-width: 809.98px) {
-  /* Stack names vertically on medium screens */
-  .framer-aXrkt.framer-1p3qhwc {
+@media (min-width:600px) and (max-width:809.98px){
+
+  .framer-aXrkt.framer-1p3qhwc{
     flex-flow: column !important;
+    align-items: center !important;
+    gap: 5px !important;              /* ⭐ THIS FIXES YOUR GAP */
   }
-  /* Break names into two lines */
+
   .framer-aXrkt .framer-11ag0sw,
-  .framer-aXrkt .framer-13k4cyv {
+  .framer-aXrkt .framer-13k4cyv{
     max-width: 90vw !important;
     white-space: pre-wrap !important;
     word-break: break-word !important;
   }
-  /* Reduce font size for names */
+
   .framer-aXrkt .framer-11ag0sw .framer-text,
-  .framer-aXrkt .framer-13k4cyv .framer-text {
+  .framer-aXrkt .framer-13k4cyv .framer-text{
     font-size: 90px !important;
+    margin: 0 !important;             /* ⭐ removes hidden spacing */
+  }
+
+  .framer-aXrkt .framer-rtadh1 .framer-text{
+    margin: 0 !important;             /* ⭐ fixes space around & */
   }
 }
 
